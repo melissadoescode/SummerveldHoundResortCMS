@@ -1,0 +1,67 @@
+<router-outlet></router-outlet>
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light text-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-2">
+             <a class="navbar-brand" href="#"><img class="logo" src="https://i.ibb.co/1Mgj6dq/Summerveld-Hound-Resort-Transparent.png" alt="D2P"></a> 
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="col-md-10">
+                    
+            <div class="collapse navbar-collapse align-center collaps-nav" id="collapsibleNavId" >
+              <ul class="navbar-nav mr-auto  mt-lg-0">
+                <!-- <li class="nav-item active">
+                  <a class="nav-link" routerLink="/design2print/category">Doggo <span class="sr-only">(current)</span></a>
+                </li> -->
+                
+                <li class="nav-item dropdown text-dark">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Doggo Info</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" routerLink="/summerveldhoundresort/doggo">Add a New Doggo</a>
+                    <a class="dropdown-item" routerLink="">Upload Doggo Intro</a>
+                    <a class="dropdown-item" routerLink="/summerveldhoundresort/lifeevent">Upload Life Events of Doggo</a>
+                    <a class="dropdown-item" routerLink="">Has Doggo been Virtually Adopted?</a>
+                    <a class="dropdown-item" routerLink="">Upload Adopted Doggo Info</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown text-dark">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Friends of Doggo</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" routerLink="">Add Doggo's Relationship Type to Friend</a>
+                    <a class="dropdown-item" routerLink="">Add Friends Of Doggo</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown text-dark">
+                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Doggo Uploads</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" routerLink="/summerveldhoundresort/doggoalbum">Upload a Doggo Album</a>
+                    <a class="dropdown-item" routerLink="">Link Doggo Content</a>
+                    <a class="dropdown-item" routerLink="">Upload a Doggo Photo</a>
+                    <a class="dropdown-item" routerLink="">Upload a Doggo Video</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>
+
+</div>
