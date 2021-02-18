@@ -107,14 +107,14 @@ export class LifeEventComponent implements OnInit {
   getReferenceDoggo(){
     this.doggoService.getDoggoById(this.doggoId).subscribe((data:any)=>{
       this.doggo = data;
-      this.selectedDoggo = data[0];
+      this.selectedDoggo = data;
     });
   }
 
   getReferenceIcon(){
     this.iconService.getIconById(this.iconId).subscribe((data:any)=>{
       this.icon = data;
-      this.selectedIcon = data[0];
+      this.selectedIcon = data;
     });
   }
 

@@ -12,7 +12,7 @@ import { ErrorHandlerService } from '../ErrorHandler/error-handler.service';
 export class IconService {
 
   rootUrl = environment.summerveldHoundResortApiUrl;
-  paramIcon = 'icon'
+  paramIcon = 'icon/'
   paramIconById = '/getIconById'
   iconId = '?iconId='
   iconUpdateDeleteId = '?id='
@@ -37,7 +37,7 @@ export class IconService {
   }
 
   getIconById(iconId:number):Observable<Icons>{
-    return this.http.get<Icons>(`${this.rootUrl}${this.paramIcon}${this.paramIconById}${this.iconId}${iconId}`)
+    return this.http.get<Icons>(`${this.rootUrl}${this.paramIcon}${iconId}`)
     .pipe(
       map((data:any)=>{
         return data;

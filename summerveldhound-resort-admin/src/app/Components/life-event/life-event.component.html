@@ -74,7 +74,6 @@
                         <th>Icon Id</th>
                         <th>Life Event Name</th>
                         <th>Life Event Date</th>
-                        <th>Life EventDate Created</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -85,7 +84,6 @@
                         <td>{{le.iconId}}</td>
                         <td>{{le.lifeEventName}}</td>
                         <td>{{le.lifeEventDate}}</td>
-                        <td>{{le.lifeEventDateCreated}}</td>
                         <td>
                             <button class="btn btn-update link2 link-four pulse-grow-on-hover" (click)="loadFormToEdit(le.lifeEventId)" data-toggle="modal" data-target="#modelId"><fa-icon [icon]="pencil"></fa-icon></button>
                             <button class="btn btn-danger link3 link-four pulse-grow-on-hover" (click)="deleteLifeEvent(le.lifeEventId)"><fa-icon [icon]="trash"></fa-icon></button>
