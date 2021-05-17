@@ -13,7 +13,7 @@ export class DoggoService {
 
   rootUrl = environment.summerveldHoundResortApiUrl;
   paramDoggo = 'Doggo/'
-  paramDoggoById = '/GetById'
+  paramDoggoById = '/getById'
   doggoId = '?id='
   doggoUpdateDeleteId = '?id='
 

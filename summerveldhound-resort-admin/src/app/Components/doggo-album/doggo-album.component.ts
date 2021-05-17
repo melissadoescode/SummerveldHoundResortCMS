@@ -26,7 +26,7 @@ export class DoggoAlbumComponent implements OnInit {
     this.doggoAlbumForm = this.formBuilder.group({
       doggoId: ['', Validators.required],
       doggoAlbumName: ['', Validators.required],
-      dateDoggoAlbumDateCreated: ['', Validators.required],    
+      dateDoggoAlbumDateCreated: ['', Validators.required]    
     })
     this.getDoggoAlbums();
   }
@@ -72,10 +72,10 @@ export class DoggoAlbumComponent implements OnInit {
     this.doggoAlbumService.getDoggoAlbumById(doggoAlbumId).subscribe((data:any)=>{
       this.doggoAlbum = data;
       this.doggoAlbumUpdate = doggoAlbumId;
-      this.doggoAlbumForm.controls['doggoAlbumId'].setValue(data[0].doggoAlbumId);
-      this.doggoAlbumForm.controls['doggoId'].setValue(data[0].doggoId);
-      this.doggoAlbumForm.controls['doggoAlbumName'].setValue(data[0].doggoAlbumName);
-      this.doggoAlbumForm.controls['dateDoggoAlbumDateCreated'].setValue(data[0].dateDoggoAlbumDateCreated);
+      this.doggoAlbumForm.controls['doggoAlbumId'].setValue(data.doggoAlbumId);
+      this.doggoAlbumForm.controls['doggoId'].setValue(data.doggoId);
+      this.doggoAlbumForm.controls['doggoAlbumName'].setValue(data.doggoAlbumName);
+      this.doggoAlbumForm.controls['dateDoggoAlbumDateCreated'].setValue(data.dateDoggoAlbumDateCreated);
     });
   }
 
@@ -103,5 +103,4 @@ export class DoggoAlbumComponent implements OnInit {
     this.doggoAlbumUpdate = null;
     this.resetForm();
   } 
-
 }

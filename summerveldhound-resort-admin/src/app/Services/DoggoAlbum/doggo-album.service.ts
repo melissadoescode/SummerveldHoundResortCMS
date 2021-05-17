@@ -37,7 +37,7 @@ export class DoggoAlbumService {
   }
 
   getDoggoAlbumById(doggoAlbumId:number):Observable<DoggoAlbum>{
-    return this.http.get<DoggoAlbum>(`${this.rootUrl}${this.paramDoggoAlbum}${this.paramDoggoAlbumById}${this.doggoAlbumId}${doggoAlbumId}`)
+    return this.http.get<DoggoAlbum>(`${this.rootUrl}${this.paramDoggoAlbum}${doggoAlbumId}`)
     .pipe(
       map((data:any)=>{
         return data;

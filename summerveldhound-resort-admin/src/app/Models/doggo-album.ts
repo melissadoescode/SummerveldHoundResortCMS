@@ -1,6 +1,6 @@
 export interface DoggoAlbum{
     doggoAlbumId: number,  
     doggoId: number,    
-    doggoAlbumName: string    
+    doggoAlbumName: string,    
     dateDoggoAlbumDateCreated: Date
 }    

@@ -15,8 +15,9 @@ export class LifeEventService {
   rootUrl = environment.summerveldHoundResortApiUrl;
   paramLifeEvent = 'lifeevent/'
   paramLifeEventById = '/getLifeEventById'
+  paramDoggoById = 'getDoggoById'
   paramGetAll = '/getAllLifeEvents'
-  lifeEventId = '?lifeEventId='
+  lifeEventId = '?doggoId='
   lifeEventUpdateDeleteId = '?id='
   
   private httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
@@ -39,7 +40,7 @@ export class LifeEventService {
   }
   //TODO: Remove
   getLifeEventById(lifeEventId:number):Observable<LifeEventViewModel[]>{
-    return this.http.get<LifeEventViewModel[]>(`${this.rootUrl}${this.paramLifeEvent}${lifeEventId}`)
+    return this.http.get<LifeEventViewModel[]>(`${this.rootUrl}${this.paramLifeEvent}${this.paramDoggoById}${this.lifeEventId}${lifeEventId}`)
     .pipe(catchError(this.errorHandler.handleError));
   }
 
