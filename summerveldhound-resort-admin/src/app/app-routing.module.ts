@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DoggoAlbumComponent } from './Components/doggo-album/doggo-album.component';
+import { AlbumComponent } from './Components/album/album.component';
 import { DoggoComponent } from './Components/doggo/doggo.component';
 import { IconComponent } from './Components/icon/icon.component';
 import { LifeEventComponent } from './Components/life-event/life-event.component';
@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'summerveldhoundresort/doggo', component:DoggoComponent},
   {path:'summerveldhoundresort/lifeevent', component:LifeEventComponent},
   {path:'summerveldhoundresort/icon', component:IconComponent},
-  {path:'summerveldhoundresort/doggoalbum', component:DoggoAlbumComponent},
+  {path:'summerveldhoundresort/album', component:AlbumComponent},
 ];
 
 @NgModule({

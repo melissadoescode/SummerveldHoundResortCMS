@@ -4,7 +4,7 @@
             <button type="button" class="link link-four pulse-grow-on-hover" data-toggle="modal" data-target="#modalId" (click)="setHeading()">Add New</button>
         </div>
         <div class="col-md-8">
-            <h2 class="headings"><span>D</span>oggo <span>A</span>lbum</h2>
+            <h2 class="headings"><span>A</span>lbum</h2>
         </div>
         <div class="col-md-2">
             
@@ -15,13 +15,13 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">
-                            <ng-template [ngIf]="doggoAlbumUpdate===null">Add Doggo Album</ng-template>
-                            <ng-template [ngIf]="doggoAlbumUpdate!=null">Update Doggo Album</ng-template>
+                            <ng-template [ngIf]="albumUpdate===null">Add Album</ng-template>
+                            <ng-template [ngIf]="albumUpdate!=null">Update Album</ng-template>
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="setHeading()"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                        <form action="" [formGroup]="doggoAlbumForm">
+                        <form action="" [formGroup]="albumForm">
                             <div class="form-group row">
                                 <div class="main_div">
                                     <div class="group">
@@ -34,17 +34,8 @@
                             <div class="form-group row">
                                 <div class="main_div">
                                     <div class="group">
-                                        <input type="text" class="form-control" name="DoggoAlbumName" id="DoggoAlbumName" formControlName="doggoAlbumName" required/>
-                                        <label>Doggo Album Name</label>
-                                        
-                                    </div>
-                                  </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="main_div">
-                                    <div class="group">
-                                        <input type="text" class="form-control" name="DateDoggoAlbumDateCreated" id="DateDoggoAlbumDateCreated" formControlName="dateDoggoAlbumDateCreated" required/>
-                                        <label>Album Date Created</label>
+                                        <input type="text" class="form-control" name="AlbumName" id="AlbumName" formControlName="albumName" required/>
+                                        <label>Album Name</label>
                                         
                                     </div>
                                   </div>
@@ -52,7 +43,7 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary btn-save"id="btn-save"  data-dismiss="modal"  (click)="onFormSubmit()" [disabled]="!doggoAlbumForm.valid">Save</button>
+                        <button type="submit" class="btn btn-primary btn-save"id="btn-save"  data-dismiss="modal"  (click)="onFormSubmit()" [disabled]="!albumForm.valid">Save</button>
                     </div>
                 </div>
             </div>
@@ -63,18 +54,18 @@
                     <tr>
                         <th>Id</th>
                         <th>Doggo Id</th>
-                        <th>Doggo Album Name</th>
+                        <th>Album Name</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody class="justify-content-center">
-                    <tr *ngFor="let doggo of doggoAlbums">
-                        <td>{{doggo.doggoAlbumId}}</td>
-                        <td>{{doggo.doggoId}}</td>
-                        <td>{{doggo.doggoAlbumName}}</td>
+                    <tr *ngFor="let album of albums">
+                        <td>{{album.albumId}}</td>
+                        <td>{{album.doggoId}}</td>
+                        <td>{{album.albumName}}</td>
                         <td>
-                            <button type="button" class="btn btn-update link2 link-four pulse-grow-on-hover" data-toggle="modal" data-target="#modalId" (click)="updateDoggoAlbum(doggo.doggoAlbumId)"><fa-icon [icon]="pencil"></fa-icon></button>  
-                            <button type="button" class="btn btn-danger link3 link-four pulse-grow-on-hover" (click)="deleteDoggoAlbum(doggo.doggoAlbumId)"><fa-icon [icon]="trash"></fa-icon></button> 
+                            <button type="button" class="btn btn-update link2 link-four pulse-grow-on-hover" data-toggle="modal" data-target="#modalId" (click)="updateAlbum(album.albumId)"><fa-icon [icon]="pencil"></fa-icon></button>  
+                            <button type="button" class="btn btn-danger link3 link-four pulse-grow-on-hover" (click)="deleteAlbum(album.albumId)"><fa-icon [icon]="trash"></fa-icon></button> 
                         </td>
                     </tr>
                 </tbody>

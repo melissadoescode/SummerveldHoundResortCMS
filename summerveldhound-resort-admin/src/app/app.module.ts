@@ -10,7 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DoggoComponent } from './Components/doggo/doggo.component';
 import { LifeEventComponent } from './Components/life-event/life-event.component';
 import { IconComponent } from './Components/icon/icon.component';
-import { DoggoAlbumComponent } from './Components/doggo-album/doggo-album.component';
+import { AlbumComponent } from './Components/album/album.component';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { DoggoAlbumComponent } from './Components/doggo-album/doggo-album.compon
     DoggoComponent,
     LifeEventComponent,
     IconComponent,
-    DoggoAlbumComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,

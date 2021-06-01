@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DoggoAlbumService } from './doggo-album.service';
+import { AlbumService } from './album.service';
 
-describe('DoggoAlbumService', () => {
-  let service: DoggoAlbumService;
+describe('AlbumService', () => {
+  let service: AlbumService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DoggoAlbumService);
+    service = TestBed.inject(AlbumService);
   });
 
   it('should be created', () => {
