@@ -11,6 +11,7 @@ import { DoggoComponent } from './Components/doggo/doggo.component';
 import { LifeEventComponent } from './Components/life-event/life-event.component';
 import { IconComponent } from './Components/icon/icon.component';
 import { AlbumComponent } from './Components/album/album.component';
+import { ContentComponent } from './Components/content/content.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AlbumComponent } from './Components/album/album.component';
     DoggoComponent,
     LifeEventComponent,
     IconComponent,
-    AlbumComponent
+    AlbumComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

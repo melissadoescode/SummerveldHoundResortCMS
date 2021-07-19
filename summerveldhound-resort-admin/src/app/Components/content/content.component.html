@@ -1,0 +1,83 @@
+<div class="container style-container">
+    <div class="row mt-2">
+        <div class="col-md-2">
+            <button type="button" class="link link-four pulse-grow-on-hover" data-toggle="modal" data-target="#modalId" (click)="setHeading()">Add New</button>
+        </div>
+        <div class="col-md-8">
+            <h2 class="headings"><span>C</span>ontent</h2>
+        </div>
+        <div class="col-md-2">
+            
+        </div>
+        
+        <div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <ng-template [ngIf]="contentUpdate===null">Add Content</ng-template>
+                            <ng-template [ngIf]="contentUpdate!=null">Update Content</ng-template>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="setHeading()"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" [formGroup]="contentForm">
+                            <div class="form-group row">
+                                <div class="main_div">
+                                    <div class="group">
+                                        <input type="text" class="form-control" name="AlbumId" id="AlbumId" formControlName="albumId" required/>
+                                        <label>Album Id</label>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="main_div">
+                                    <div class="group">
+                                        <input type="text" class="form-control" name="ContentUpload" id="ContentUpload" formControlName="contentUpload" required/>
+                                        <label>Content Upload</label>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="main_div">
+                                    <div class="group">
+                                        <input type="text" class="form-control" name="ContentDescription" id="ContentDescription" formControlName="contentDescription" required/>
+                                        <label>Content Description</label>
+                                    </div>
+                                  </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-save"id="btn-save"  data-dismiss="modal"  (click)="onFormSubmit()" [disabled]="!contentForm.valid">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="min-width: 100% !important;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Album Id</th>
+                        <th>Content Upload</th>
+                        <th>Content Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="justify-content-center">
+                    <tr *ngFor="let content of contents">
+                        <td>{{content.contentId}}</td>
+                        <td>{{content.albumId}}</td>
+                        <td>{{content.contentUpload}}</td>
+                        <td>{{content.contentDescription}}</td>
+                        <td>
+                            <button type="button" class="btn btn-update link2 link-four pulse-grow-on-hover" data-toggle="modal" data-target="#modalId" (click)="updateContent(content.contentId)"><fa-icon [icon]="pencil"></fa-icon></button>  
+                            <button type="button" class="btn btn-danger link3 link-four pulse-grow-on-hover" (click)="deleteContent(content.contentId)"><fa-icon [icon]="trash"></fa-icon></button> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

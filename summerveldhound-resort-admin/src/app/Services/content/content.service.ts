@@ -1,28 +1,28 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 import { catchError, map } from 'rxjs/operators';
-import { Album } from 'src/app/Models/album';
-import { AlbumViewModel } from 'src/app/Models/ViewModels/AlbumViewModel';
+import { Content } from 'src/app/Models/content';
+import { ContentViewModel } from 'src/app/Models/ViewModels/ContentViewModel';
 import { environment } from 'src/environments/environment';
 import { ErrorHandlerService } from '../ErrorHandler/error-handler.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AlbumService {
+export class ContentService {
   rootUrl = environment.summerveldHoundResortApiUrl;
-  paramAlbum = 'album';
-  paramGetByDoggoId = 'getAlbumByDoggoId';
-  paramDoggoId = 'doggoId';
-  albumUpdateDeleteId = '?id=';
+  paramContent = 'content';
+  paramGetByAlbumId = 'getContentByAlbumId';
+  paramAlbumId = 'albumId';
+  contentUpdateDeleteId = '?id=';
 
   private httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
 
   constructor(private http: HttpClient, private errorHandler: ErrorHandlerService) { }
 
-  addAlbum(album: Album){
-    return this.http.post(`${this.rootUrl}${this.paramAlbum}`,album, this.httpOptions)
+  addContent(content:Content){
+    return this.http.post(`${this.rootUrl}${this.paramContent}`,content, this.httpOptions)
     .pipe(
       map((data:any)=>{
         return data;
@@ -31,13 +31,13 @@ export class AlbumService {
     );
   }
 
-  getAlbum(){
-    return this.http.get(`${this.rootUrl}${this.paramAlbum}`)
+  getContent(){
+    return this.http.get(`${this.rootUrl}${this.paramContent}`)
     .pipe(catchError(this.errorHandler.handleError));
   }
 
-  getAlbumById(albumId:number):Observable<Album>{
-    return this.http.get<Album>(`${this.rootUrl}${this.paramAlbum}/${albumId}`)
+  getContentById(contentId:number):Observable<Content>{
+    return this.http.get<Content>(`${this.rootUrl}${this.paramContent}/${contentId}`)
     .pipe(
       map((data:any)=>{
         return data;
@@ -46,8 +46,8 @@ export class AlbumService {
     );
   }
 
-  getAlbumByDoggoId(doggoId:number):Observable<AlbumViewModel>{
-    return this.http.get<AlbumViewModel>(`${this.rootUrl}${this.paramAlbum}${this.paramGetByDoggoId}${this.paramDoggoId}${doggoId}`)
+  getContentByAlbumId(albumId:number):Observable<ContentViewModel>{
+    return this.http.get<ContentViewModel>(`${this.rootUrl}${this.paramContent}${this.paramGetByAlbumId}${this.paramAlbumId}${albumId}`)
     .pipe(
       map((data:any)=>{
         return data;
@@ -56,8 +56,8 @@ export class AlbumService {
     );
   }
 
-  updateAlbum(albumId:number, album:Album): Observable<any>{
-    return this.http.put(`${this.rootUrl}${this.paramAlbum}${this.albumUpdateDeleteId}${albumId}`,album, this.httpOptions)
+  updateContent(contentId:number, content:Content): Observable<any>{
+    return this.http.put(`${this.rootUrl}${this.paramContent}${this.contentUpdateDeleteId}${contentId}`,content, this.httpOptions)
     .pipe(
       map((data:any)=>{
         return data;
@@ -66,8 +66,8 @@ export class AlbumService {
     );
   }
 
-  deleteAlbum(albumId:number){
-    return this.http.delete(`${this.rootUrl}${this.paramAlbum}${this.albumUpdateDeleteId}${albumId}`)
+  deleteContent(contentId:number){
+    return this.http.delete(`${this.rootUrl}${this.paramContent}${this.contentUpdateDeleteId}${contentId}`)
     .pipe(
       map((data:any)=>{
         return data;
